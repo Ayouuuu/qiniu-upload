@@ -23,7 +23,6 @@ def get_file_md5(file):
 
 
 def upload_file(key, path):
-    print("正在上传: " + path)
     token = q.upload_token(bucket_name)
     ret, info = put_file(token, key, path, version="v2")
     if ret is not None:
