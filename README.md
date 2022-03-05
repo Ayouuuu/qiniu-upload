@@ -21,8 +21,6 @@ bucket_name = ""
 q = qiniu.Auth(ak, sk)
 # 七牛云路径名
 upload_name = ""
-# search_path = path = os.getcwd() + os.sep + "img" + os.sep
-search_path = path = os.getcwd() + os.sep
 ```
 # 使用方法
 填写好 `密钥`、`存储桶名`、`七牛云路径`,将该`py`文件放置图片目录
