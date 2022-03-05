@@ -76,7 +76,7 @@ def loadMd5():
     path = dirname + os.sep + "logs.log"
     print(path)
     if not os.path.exists(path):
-        os.mknod("logs.log")
+        os.mknod(path)
     file = open(path, 'r')
     if file is None:
         return
