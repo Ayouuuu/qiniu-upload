@@ -21,9 +21,14 @@ def get_file_md5(file):
         data = fp.read()
         return hashlib.md5(data).hexdigest()
 
+    
+policy = {
+    "insertOnly": 0
+}
+
 
 def upload_file(key, path):
-    token = q.upload_token(bucket_name)
+    token = q.upload_token(bucket_name,key,3600,policy=policy)
     ret, info = put_file(token, key, path, version="v2")
     if ret is not None:
         print("上传成功: " + path)
