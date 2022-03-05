@@ -44,5 +44,7 @@ python3 qiniu-upload.py -d <指定目录> -i true -t php,js
 1. 进入目录所在路径
 ```shell
 python3 <脚本所在路径> -d <目录路径>
+# 这个<目录路径> 则为您 七牛云的存储路径
+# 例 -d img/ 则存储路径为 img/*.*
 ```
 
