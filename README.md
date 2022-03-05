@@ -40,4 +40,9 @@ python3 qiniu-upload.py -d <指定目录> -i true -t php,js
 |-d <目录路径>|指定文件夹上传|运行目录
 |-i true|忽略MD5验证|进行验证
 |-t <文件后缀>|-t php,js,css|全部上传
+## 如何优雅的上传整个目录的文件
+1. 进入目录所在路径
+```shell
+python3 <脚本所在路径> -d <目录路径>
+```
 
