@@ -2,9 +2,9 @@ import click
 import qiniu
 import os
 from qiniu import put_file
-import imghdr
 import hashlib
 import time
+import sys
 
 # 七牛云密钥
 ak = ""
@@ -72,7 +72,9 @@ def containMd5(md5):
 
 
 def loadMd5():
-    path = os.getcwd() + os.sep + "logs.log"
+    dirname, filename = os.path.split(os.path.abspath(sys.argv[0]))
+    path = dirname + os.sep + "logs.log"
+    print(path)
     if not os.path.exists(path):
         os.mknod("logs.log")
     file = open(path, 'r')
@@ -133,6 +135,10 @@ def run(file, dir, ignore, path, type):
     elif dir is not None:
         scanfile(dir)
         pass
+    else:
+        print("未指定文件夹，自动定位当前运行目录")
+        scanfile(search_path)
+        pass
     print("开始上传文件：七牛云路径", ("/" if upload_name == "" else upload_name))
     runUpload()
     createLog()
@@ -141,6 +147,7 @@ def run(file, dir, ignore, path, type):
 def runUpload():
     for file in allfiles:
         upload_path = (upload_name + file).replace(os.sep + os.sep, os.sep)
+        upload_path = upload_path[1:] if upload_path[0] == '/' else upload_path
         if upload_file(upload_path, file):
             continue
 
