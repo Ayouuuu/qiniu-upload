@@ -59,7 +59,8 @@ def insertMd5():
 
 
 def createFile(name, list):
-    file = open(os.getcwd() + os.sep + name, 'a', encoding='utf-8')
+    dirname, filename = os.path.split(os.path.abspath(sys.argv[0]))
+    file = open(dirname + os.sep + name, 'a', encoding='utf-8')
     for fileName in list:
         file.write(fileName + '\n')
     file.close()
