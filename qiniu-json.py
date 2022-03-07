@@ -4,12 +4,12 @@ import qiniu
 import os
 import json
 
-ak = "iOxql1MY4B4Y4vlJu6-McAO13NwHeZAXkb1G87is"
-sk = "NcLotWrCuSlDQmQBSNBYtZonXKLpj2hStEeMJn5R"
-bucket_name = "aypu10031"
+ak = ""
+sk = ""
+bucket_name = ""
 q = qiniu.Auth(ak, sk)
 bucket_manager = qiniu.BucketManager(q)
-url = 'https://img.ayou10031.cn/'
+url = ''
 
 list_files = []
 prefix = "img/"
