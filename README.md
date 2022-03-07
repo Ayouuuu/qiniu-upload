@@ -48,7 +48,7 @@ python3 <脚本所在路径> -d <目录路径>
 # 例 -d img/ 则存储路径为 img/*.*
 ```
 ## 获取指定目录所有文件
-运行以下只能会生成`jsonLog.log`文件存储所有文件路径
+运行以下命令会生成`jsonLog.log`文件存储所有文件路径
 ```shell
 python3 qiniu-json.py
 ```
